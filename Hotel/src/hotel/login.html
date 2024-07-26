@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Login</h1>
+  <div class="login-container">
+    <div class="background-image"></div>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="mobile">Mobile Number (10 digits):</label>
+      <input type="text" id="mobile" name="mobile" required pattern="[0-9]{10}" title="Please enter a 10-digit number">
+      
+      <input type="checkbox" id="remember-me">
+      <label for="remember-me">Remember Me</label>
+      
+      <button type="submit"><a href="requirement.html">Login</a></button>
+    </form>
+  </div>
+  
+
+
+  <script>
+    // Mobile number validation
+    document.getElementById('mobile').addEventListener('input', function() {
+      const mobileInput = document.getElementById('mobile');
+      const isValid = /^[0-9]{10}$/.test(mobileInput.value);
+      mobileInput.setCustomValidity(isValid ? '' : 'Please enter a 10-digit number');
+    });
+
+    // Login form submission
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Replace this with your login validation logic
+      alert('Login functionality here');
+    });
+  </script>
+
+  
+</body>
+</html>

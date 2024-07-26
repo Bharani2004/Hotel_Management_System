@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Login</h1>
+  <div class="login-container">
+    <div class="background-image"></div>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="mobile">Mobile Number (10 digits):</label>
+      <input type="text" id="mobile" name="mobile" required pattern="[0-9]{10}" title="Please enter a 10-digit number">
+      
+      <input type="checkbox" id="remember-me">
+      <label for="remember-me">Remember Me</label>
+      
+      <button type="submit"><a href="requirement.html">Login</a></button>
+    </form>
+  </div>
+  
+
+
+  <script>
+    // Mobile number validation
+    document.getElementById('mobile').addEventListener('input', function() {
+      const mobileInput = document.getElementById('mobile');
+      const isValid = /^[0-9]{10}$/.test(mobileInput.value);
+      mobileInput.setCustomValidity(isValid ? '' : 'Please enter a 10-digit number');
+    });
+
+    // Login form submission
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Replace this with your login validation logic
+      alert('Login functionality here');
+    });
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif, bold;
+      background-image: url("https://t4.ftcdn.net/jpg/02/84/46/89/360_F_284468940_1bg6BwgOfjCnE3W0wkMVMVqddJgtMynE.jpg");
+      background-size: cover;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 2px; /* Increased space between title and form */
+    }
+
+    .login-container {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      background: white;
+      padding: 40px; /* Adjusted padding for more space inside the form */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px; /* Limit form width */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px; /* Reduced space between form elements */
+    }
+
+    input[type="text"],
+    input[type="checkbox"],
+    button {
+      width: calc(100% - 16px); /* Adjusted width for better alignment */
+      padding: 8px;
+      margin-bottom: 10px; /* Reduced space between form elements */
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      color: beige;
+    }
+    a
+    {
+      text-decoration: none;
+      color: ivory;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</body>
+</html>
